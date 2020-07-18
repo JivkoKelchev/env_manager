@@ -23,6 +23,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+//Todo change xml file with serialized objects
 public class ModelService {
     private HashMap<String, XammpModel> modelContainer;
 
