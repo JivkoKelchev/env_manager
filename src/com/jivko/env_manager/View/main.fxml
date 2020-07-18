@@ -1,0 +1,44 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<AnchorPane fx:controller="com.jivko.env_manager.Controller.Controller"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="mainPane"
+			>
+	<MenuBar AnchorPane.LeftAnchor="0" AnchorPane.rightAnchor="0">
+		<Menu fx:id="mMain" text="Main">
+			<MenuItem text="Add xampp dir" onAction="#addXamppDirAction"></MenuItem>
+		</Menu>
+		
+		<Menu fx:id="mProfiles" text="Profiles">
+			<MenuItem text="Save profile"></MenuItem>
+			<MenuItem text="Delete profile"></MenuItem>
+			<SeparatorMenuItem></SeparatorMenuItem>
+		</Menu>
+		
+		<Menu fx:id="mAbout" text="About">
+		</Menu>
+	</MenuBar>
+	
+	<GridPane fx:id="mainGrid" vgap="5" hgap="5" AnchorPane.topAnchor="30" AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="0">
+		<columnConstraints>
+			<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="60.0" prefWidth="100.0" />
+			<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+			<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+		</columnConstraints>
+		<rowConstraints>
+			<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+		</rowConstraints>
+	</GridPane>
+	
+</AnchorPane>
