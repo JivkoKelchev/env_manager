@@ -122,6 +122,19 @@ public class Controller {
         XammpControllerService xammpControllerService = (XammpControllerService) this.container.getService("control");
         CheckBox source = (CheckBox) event.getSource();
         if(source.isSelected()){
+            //find and stop another apache and clear other checkboxes
+            ObservableList<Node> childrens = this.mainGrid.getChildren();
+            for (Node child : childrens) {
+                int column = GridPane.getColumnIndex(child);
+                if ( column == 2 &&
+                        child.getClass() == CheckBox.class &&
+                        ((CheckBox) child).isSelected() &&
+                        !source.getId().equals(child.getId())
+                ) {
+                    xammpControllerService.stopMySql(child.getId());
+                    ((CheckBox) child).setSelected(false);
+                }
+            }
             xammpControllerService.startMySql(source.getId());
         } else {
             xammpControllerService.stopMySql(source.getId());
