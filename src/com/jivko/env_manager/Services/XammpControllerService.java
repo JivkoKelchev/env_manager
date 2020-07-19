@@ -3,7 +3,7 @@ package com.jivko.env_manager.Services;
 import java.io.*;
 import java.util.HashMap;
 
-public class XammpControllerService {
+public class XammpControllerService implements Service{
 
     //todo clear cmd processes after execution
     HashMap<String, Process> runningProcesses;

@@ -23,7 +23,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ModelService {
+public class ModelService implements Service{
     private HashMap<String, XammpModel> modelContainer;
 
     public ModelService() {

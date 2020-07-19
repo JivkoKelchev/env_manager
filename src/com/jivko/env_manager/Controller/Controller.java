@@ -1,5 +1,6 @@
 package com.jivko.env_manager.Controller;
 
+import com.jivko.env_manager.Services.DirectoryService;
 import com.jivko.env_manager.Services.ModelService;
 import com.jivko.env_manager.Services.ServiceContainer;
 import com.jivko.env_manager.Services.XammpControllerService;
@@ -37,8 +38,9 @@ public class Controller {
         refreshMainGrid();
 
         MenuItem first = new MenuItem();
-        first.setText("bla bla");
+        first.setText("Profiles are not working yet :)");
         mProfiles.getItems().add(first);
+
     }
 
     private void refreshMainGrid(){
@@ -72,6 +74,10 @@ public class Controller {
                 sqlCB.setId(xamppDirs.get(index));
                 sqlCB.setOnAction(this::mysqlCBAction);
                 mainGrid.add(sqlCB, 2, index + 1);
+                DirectoryService directoryService = (DirectoryService) this.container.getService("dir");
+                if(!directoryService.isMySqlInsalled(xamppDirs.get(index))) {
+                    sqlCB.setDisable(true);
+                }
             }
         }
     }
