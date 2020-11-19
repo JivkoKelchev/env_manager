@@ -19,6 +19,9 @@ public class XammpControllerService implements Service{
             File hideScript = new File(getClass().getClassLoader().getResource("hide.vbs").getFile());
             String hideScriptPath = hideScript.getAbsolutePath();
             Process p = Runtime.getRuntime().exec("wscript.exe " + hideScriptPath + " " + dir + "/apache_start.bat");
+//            Process p = Runtime.getRuntime().exec("C:\\xamppAdp4\\apache\\bin\\httpd.exe");
+//            int exitVal = p.waitFor();
+//            System.out.println("ExitValue: " + exitVal);
 
 
 

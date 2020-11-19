@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("View/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/View/main.fxml"));
         primaryStage.setTitle("XAMPP com.jivko.Switcher");
         primaryStage.setScene(new Scene(root, 600, 200));
         primaryStage.show();
