@@ -7,14 +7,56 @@
     <groupId>env_manage</groupId>
     <artifactId>appache_runner</artifactId>
     <version>1.0</version>
+    
+    
+    <dependencies>
+    
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-exec -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-exec</artifactId>
+            <version>1.3</version>
+        </dependency>
+    
+    
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx</artifactId>
+            <version>11</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11</version>
+        </dependency>
+    </dependencies>
+    
+    
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.3</version>
+                <configuration>
+                    <mainClass>com.jivko.env_manager.Main</mainClass>
+                    <executable>C:\Program Files\Java\jdk-11.0.2\bin\java.exe</executable>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    
                 </configuration>
             </plugin>
         </plugins>
